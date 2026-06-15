@@ -1,0 +1,38 @@
+cat > Script/customer.js << 'EOF'
+const API = 'https://animated-dollop-vpvq555j6r6cwjqx-3000.app.github.dev';
+
+async function loadCustomers() {
+    const res = await fetch(API + '/customer');
+    const data = await res.json();
+    const tbody = document.querySelector('#customertable tbody');
+    tbody.innerHTML = data.map(c => `
+        <tr>
+            <td>${c.customer_id}</td>
+            <td>${c.name}</td>
+            <td>${c.email}</td>
+            <td>${c.phone}</td>
+            <td>${c.id_proof}</td>
+        </tr>
+    `).join('');
+}
+
+document.getElementById('addCustomerForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const body = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        id_proof: document.getElementById('idProof').value
+    };
+    await fetch(API + '/customer', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body)
+    });
+    loadCustomers();
+    bootstrap.Modal.getInstance(document.getElementById('addCustomerModal')).hide();
+    this.reset();
+});
+
+loadCustomers();
+EOF
