@@ -1,0 +1,60 @@
+cat > customer.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #faf9f0; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #333; }
+    table { width: 100%; border-collapse: collapse; margin-top: 30px; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background-color: #28a745; color: white; }
+    tr:hover { background-color: #f1f1f1; }
+    .container { max-width: 1000px; margin: auto; }
+    .modal-header { background: linear-gradient(45deg, #28a745, #218838); color: white; }
+    .modal-header .btn-close { filter: brightness(0) invert(1); }
+    #addCustomerForm input.form-control { border: 2px solid #28a745; border-radius: 0.4rem; }
+    #addCustomerForm label.form-label { font-weight: 600; color: #155724; }
+    .modal-footer .btn-primary { background-color: #28a745; border-color: #28a745; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Directory</h1>
+    <a href="index.html" class="btn btn-secondary mt-2">🏠 Home</a>
+    <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#addCustomerModal">Add New Customer</button>
+    <table id="customertable" class="table table-striped">
+      <thead>
+        <tr><th>Customer ID</th><th>Name</th><th>Email</th><th>Phone</th><th>ID Proof</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="addCustomerForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New Customer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label">Name</label><input type="text" class="form-control" id="name" required /></div>
+          <div class="mb-3"><label class="form-label">Email</label><input type="email" class="form-control" id="email" required /></div>
+          <div class="mb-3"><label class="form-label">Phone</label><input type="text" class="form-control" id="phone" required /></div>
+          <div class="mb-3"><label class="form-label">ID Proof</label><input type="text" class="form-control" id="idProof" required /></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Customer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="Script/customer.js"></script>
+</body>
+</html>
+EOF

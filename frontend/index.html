@@ -1,0 +1,37 @@
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #1a1a2e; color: white; }
+        .header { background: #16213e; padding: 20px; text-align: center; }
+        .header h1 { color: #e94560; margin: 0; }
+        .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 20px; background: #0f3460; }
+        .nav a { color: white; text-decoration: none; padding: 10px 20px; background: #e94560; border-radius: 5px; }
+        .nav a:hover { background: #c73652; }
+        .content { padding: 30px; text-align: center; }
+        .content h2 { color: #e94560; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏨 Hotel Management System</h1>
+        <p>Welcome to Hotel Management System</p>
+    </div>
+    <div class="nav">
+        <a href="customer.html">👤 Customers</a>
+        <a href="room.html">🛏️ Rooms</a>
+        <a href="booking.html">📅 Bookings</a>
+        <a href="payment.html">💳 Payments</a>
+        <a href="employee.html">👨‍💼 Employees</a>
+        <a href="feedback.html">⭐ Feedback</a>
+    </div>
+    <div class="content">
+        <h2>Select a section from above</h2>
+    </div>
+</body>
+</html>
+EOF
