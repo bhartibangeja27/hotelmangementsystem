@@ -1,6 +1,4 @@
-cat > Script/customer.js << 'EOF'
 const API = 'https://animated-dollop-vpvq555j6r6cwjqx-3000.app.github.dev';
-
 async function loadCustomers() {
     const res = await fetch(API + '/customer');
     const data = await res.json();
@@ -15,7 +13,6 @@ async function loadCustomers() {
         </tr>
     `).join('');
 }
-
 document.getElementById('addCustomerForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const body = {
@@ -33,6 +30,4 @@ document.getElementById('addCustomerForm').addEventListener('submit', async func
     bootstrap.Modal.getInstance(document.getElementById('addCustomerModal')).hide();
     this.reset();
 });
-
 loadCustomers();
-EOF
