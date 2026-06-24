@@ -48,6 +48,18 @@ app.post('/customer', async (req, res) => {
     res.status(500).json({ Error: err.message });
   }
 });
+app.post('/room', async (req, res) => {
+    try {
+        const { room_number, type, price, status } = req.body;
+        const result = await pool.query(
+            'INSERT INTO room (room_number, type, price, status) VALUES ($1, $2, $3, $4) RETURNING *',
+            [room_number, type, price, status]
+        );
+        res.status(201).json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 app.get('/room', async (req, res) => {
     try {
@@ -136,4 +148,4 @@ app.get('/inventory', async (req, res) => {
 const PORT = process.env.PORT;
 app.listen(PORT,()=>{
     console.log(`Connected Succefully....on PORT ${PORT}`);
-});
+}); 
