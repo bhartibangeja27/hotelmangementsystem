@@ -69,6 +69,18 @@ app.get('/room', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+app.post('/employees', async (req, res) => {
+    try {
+        const { name, position, phone, email, salary } = req.body;
+        const result = await pool.query(
+            'INSERT INTO employees (name, position, phone, email, salary) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [name, position, phone, email, salary]
+        );
+        res.status(201).json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 app.get('/employees', async (req, res) => {
     try {
