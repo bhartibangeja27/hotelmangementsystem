@@ -162,6 +162,19 @@ app.get('/service', async (req, res) => {
     }
 });
 
+app.post('/feedback', async (req, res) => {
+    try {
+        const { customer_id, booking_id, rating, comments, date } = req.body;
+        const result = await pool.query(
+            'INSERT INTO feedback (customer_id, booking_id, rating, comments, date) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [customer_id, booking_id, rating, comments, date]
+        );
+        res.status(201).json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 app.get('/feedback', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM Feedback');
