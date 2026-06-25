@@ -90,12 +90,36 @@ app.get('/employees', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+app.post('/booking', async (req, res) => {
+    try {
+        const { customer_id, room_id, check_in, check_out, booking_date } = req.body;
+        const result = await pool.query(
+            'INSERT INTO booking (customer_id, room_id, check_in, check_out, booking_date) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [customer_id, room_id, check_in, check_out, booking_date]
+        );
+        res.status(201).json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 
 app.get('/booking', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM Booking');
         res.json(result.rows);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+app.post('/payment', async (req, res) => {
+    try {
+        const { booking_id, amount, method, payment_date, status } = req.body;
+        const result = await pool.query(
+            'INSERT INTO payment (booking_id, amount, method, payment_date, status) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [booking_id, amount, method, payment_date, status]
+        );
+        res.status(201).json(result.rows[0]);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
