@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Room Types — Grand HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { navy: '#0F1C2E', slateCard: '#1E2D40', goldAccent: '#D4A853', mutedText: '#8899AA' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy text-white min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <a href="index.html" class="text-goldAccent hover:underline text-sm mb-4 inline-block">← Back to Dashboard</a>
+        
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Room Types Management</h1>
+                <p class="text-mutedText text-sm">Configure hotel room configurations, categories and pricing tiers.</p>
+            </div>
+            <button class="bg-goldAccent text-navy font-semibold px-4 py-2 rounded shadow hover:bg-opacity-90 transition">
+                + Add Room Type
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-slateCard p-6 rounded-lg shadow-lg lg:col-span-2">
+                <h3 class="text-lg font-semibold mb-4 text-goldAccent">Active Configurations</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-mutedText">
+                        <thead class="text-xs text-white uppercase bg-[#162232]">
+                            <tr>
+                                <th class="p-3">ID</th>
+                                <th class="p-3">Type Name</th>
+                                <th class="p-3">Base Price</th>
+                                <th class="p-3">Capacity</th>
+                                <th class="p-3">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800 text-white">
+                            <tr class="hover:bg-slate-800/30">
+                                <td class="p-3 font-mono text-goldAccent">RT-01</td>
+                                <td class="p-3 font-medium">Standard Twin</td>
+                                <td class="p-3">$120/night</td>
+                                <td class="p-3">2 Adults</td>
+                                <td class="p-3 text-xs"><button class="text-blue-400 hover:underline">Edit</button></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30">
+                                <td class="p-3 font-mono text-goldAccent">RT-02</td>
+                                <td class="p-3 font-medium">Deluxe Suite</td>
+                                <td class="p-3">$250/night</td>
+                                <td class="p-3">3 Adults</td>
+                                <td class="p-3 text-xs"><button class="text-blue-400 hover:underline">Edit</button></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30">
+                                <td class="p-3 font-mono text-goldAccent">RT-03</td>
+                                <td class="p-3 font-medium">Presidential King</td>
+                                <td class="p-3">$600/night</td>
+                                <td class="p-3">4 Adults</td>
+                                <td class="p-3 text-xs"><button class="text-blue-400 hover:underline">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-slateCard p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-4 text-goldAccent">Quick Registry</h3>
+                <form class="space-y-4 text-sm">
+                    <div>
+                        <label class="block text-mutedText mb-1">Room Type Code / Name</label>
+                        <input type="text" class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent" placeholder="e.g. Executive Studio">
+                    </div>
+                    <div>
+                        <label class="block text-mutedText mb-1">Base Cost per Night ($)</label>
+                        <input type="number" class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent" placeholder="150">
+                    </div>
+                    <div>
+                        <label class="block text-mutedText mb-1">Max Occupancy Capacity</label>
+                        <select class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent">
+                            <option>1 Person</option>
+                            <option>2 Persons</option>
+                            <option>3-4 Persons</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-slate-800 hover:bg-slate-700 text-goldAccent font-medium py-2 rounded transition border border-goldAccent/30">Save Configuration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

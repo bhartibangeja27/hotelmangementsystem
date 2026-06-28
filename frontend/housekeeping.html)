@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housekeeping Control — Grand HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { navy: '#0F1C2E', slateCard: '#1E2D40', goldAccent: '#D4A853', mutedText: '#8899AA' } } }
+        }
+    </script>
+</head>
+<body class="bg-navy text-white min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <a href="index.html" class="text-goldAccent hover:underline text-sm mb-4 inline-block">← Back to Dashboard</a>
+        
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Housekeeping Operations</h1>
+                <p class="text-mutedText text-sm">Track housekeeping logs, inspection statuses, and staff allocations.</p>
+            </div>
+        </div>
+
+        <div class="bg-slateCard p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-semibold mb-4 text-goldAccent">Live Cleaning Schedules</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-mutedText">
+                    <thead class="text-xs text-white uppercase bg-[#162232]">
+                        <tr>
+                            <th class="p-3">Task ID</th>
+                            <th class="p-3">Room</th>
+                            <th class="p-3">Staff Assigned</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Last Checked</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-white">
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-3 font-mono text-goldAccent">HK-902</td>
+                            <td class="p-3 font-medium">Room 310</td>
+                            <td class="p-3">Fatima Ali</td>
+                            <td class="p-3"><span class="px-2 py-0.5 text-xs bg-amber-500/20 text-amber-400 rounded-full font-bold">In Progress</span></td>
+                            <td class="p-3 text-xs">10 mins ago</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-3 font-mono text-goldAccent">HK-903</td>
+                            <td class="p-3 font-medium">Room 204</td>
+                            <td class="p-3">John Doe</td>
+                            <td class="p-3"><span class="px-2 py-0.5 text-xs bg-emerald-500/20 text-emerald-400 rounded-full font-bold">Cleaned</span></td>
+                            <td class="p-3 text-xs">Just Now</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

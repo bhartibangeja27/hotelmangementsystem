@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices Ledger — Grand HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { navy: '#0F1C2E', slateCard: '#1E2D40', goldAccent: '#D4A853', mutedText: '#8899AA' } } }
+        }
+    </script>
+</head>
+<body class="bg-navy text-white min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <a href="index.html" class="text-goldAccent hover:underline text-sm mb-4 inline-block">← Back to Dashboard</a>
+        
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Invoice Ledger</h1>
+                <p class="text-mutedText text-sm">Auditing records for all checkouts and corporate billings.</p>
+            </div>
+        </div>
+
+        <div class="bg-slateCard p-6 rounded-lg shadow-lg">
+            <table class="w-full text-left text-sm text-mutedText">
+                <thead class="text-xs text-white uppercase bg-[#162232]">
+                    <tr>
+                        <th class="p-3">Invoice #</th>
+                        <th class="p-3">Booking Reference</th>
+                        <th class="p-3">Guest Name</th>
+                        <th class="p-3">Tax Component</th>
+                        <th class="p-3">Grand Total</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800 text-white">
+                    <tr class="hover:bg-slate-800/30">
+                        <td class="p-3 font-mono text-goldAccent">INV-2026-001</td>
+                        <td class="p-3 font-mono">BK-7701</td>
+                        <td class="p-3 font-medium">Ahmed Khan</td>
+                        <td class="p-3">$32.00 (10%)</td>
+                        <td class="p-3 text-emerald-400 font-bold">$352.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

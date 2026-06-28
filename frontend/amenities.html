@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Amenities — Grand HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { navy: '#0F1C2E', slateCard: '#1E2D40', goldAccent: '#D4A853', mutedText: '#8899AA' } } }
+        }
+    </script>
+</head>
+<body class="bg-navy text-white min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <a href="index.html" class="text-goldAccent hover:underline text-sm mb-4 inline-block">← Back to Dashboard</a>
+        
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Hotel Amenities</h1>
+                <p class="text-mutedText text-sm">Manage standard and premium room features.</p>
+            </div>
+            <button class="bg-goldAccent text-navy font-semibold px-4 py-2 rounded shadow hover:bg-opacity-90 transition">+ Add New Amenity</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-slateCard p-6 rounded-lg shadow-lg lg:col-span-2">
+                <table class="w-full text-left text-sm text-mutedText">
+                    <thead class="text-xs text-white uppercase bg-[#162232]">
+                        <tr>
+                            <th class="p-3">ID</th>
+                            <th class="p-3">Amenity Name</th>
+                            <th class="p-3">Type</th>
+                            <th class="p-3">Cost Basis</th>
+                            <th class="p-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-white">
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-3 font-mono text-goldAccent">AM-101</td>
+                            <td class="p-3 font-medium">High-Speed Wi-Fi (6G)</td>
+                            <td class="p-3">Technical</td>
+                            <td class="p-3"><span class="text-emerald-400">Complimentary</span></td>
+                            <td class="p-3 text-xs"><button class="text-blue-400 hover:underline">Edit</button></td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-3 font-mono text-goldAccent">AM-102</td>
+                            <td class="p-3 font-medium">Mini-Bar Premium Setup</td>
+                            <td class="p-3">Refreshment</td>
+                            <td class="p-3">$45 / Setup</td>
+                            <td class="p-3 text-xs"><button class="text-blue-400 hover:underline">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-slateCard p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-4 text-goldAccent">Add Amenity</h3>
+                <form class="space-y-4 text-sm">
+                    <div>
+                        <label class="block text-mutedText mb-1">Amenity Name</label>
+                        <input type="text" class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent" placeholder="e.g. Jacuzzi Bathtub">
+                    </div>
+                    <div>
+                        <label class="block text-mutedText mb-1">Pricing Model</label>
+                        <input type="text" class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent" placeholder="Complimentary or Fixed Charge">
+                    </div>
+                    <button type="submit" class="w-full bg-slate-800 hover:bg-slate-700 text-goldAccent font-medium py-2 rounded transition border border-goldAccent/30">Register Amenity</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Departments — Grand HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { navy: '#0F1C2E', slateCard: '#1E2D40', goldAccent: '#D4A853', mutedText: '#8899AA' } } }
+        }
+    </script>
+</head>
+<body class="bg-navy text-white min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <a href="index.html" class="text-goldAccent hover:underline text-sm mb-4 inline-block">← Back to Dashboard</a>
+        
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Organizational Departments</h1>
+                <p class="text-mutedText text-sm">Manage institutional breakdown and structural tracking fields.</p>
+            </div>
+        </div>
+
+        <div class="bg-slateCard p-6 rounded-lg shadow-lg">
+            <table class="w-full text-left text-sm text-mutedText">
+                <thead class="text-xs text-white uppercase bg-[#162232]">
+                    <tr>
+                        <th class="p-3">Dept ID</th>
+                        <th class="p-3">Department Name</th>
+                        <th class="p-3">Total Staff Count</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800 text-white">
+                    <tr class="hover:bg-slate-800/30">
+                        <td class="p-3 font-mono text-goldAccent">DEPT-01</td>
+                        <td class="p-3 font-medium">Front Desk & Concierge</td>
+                        <td class="p-3 text-white">12 Employees</td>
+                    </tr>
+                    <tr class="hover:bg-slate-800/30">
+                        <td class="p-3 font-mono text-goldAccent">DEPT-02</td>
+                        <td class="p-3 font-medium">Housekeeping Operations</td>
+                        <td class="p-3 text-white">24 Employees</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

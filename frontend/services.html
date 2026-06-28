@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Services — Grand HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { navy: '#0F1C2E', slateCard: '#1E2D40', goldAccent: '#D4A853', mutedText: '#8899AA' } } }
+        }
+    </script>
+</head>
+<body class="bg-navy text-white min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <a href="index.html" class="text-goldAccent hover:underline text-sm mb-4 inline-block">← Back to Dashboard</a>
+        
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Hotel Services Catalog</h1>
+                <p class="text-mutedText text-sm">Manage paid guest services and multi-department fulfillment codes.</p>
+            </div>
+            <button class="bg-goldAccent text-navy font-semibold px-4 py-2 rounded shadow hover:bg-opacity-90 transition">+ Add Service</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-slateCard p-6 rounded-lg shadow-lg lg:col-span-2">
+                <table class="w-full text-left text-sm text-mutedText">
+                    <thead class="text-xs text-white uppercase bg-[#162232]">
+                        <tr>
+                            <th class="p-3">Code</th>
+                            <th class="p-3">Service Name</th>
+                            <th class="p-3">Department</th>
+                            <th class="p-3">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-white">
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-3 font-mono text-goldAccent">SRV-08</td>
+                            <td class="p-3 font-medium">VIP Airport Pick-up</td>
+                            <td class="p-3">Transport</td>
+                            <td class="p-3 text-emerald-400">$75.00</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30">
+                            <td class="p-3 font-mono text-goldAccent">SRV-12</td>
+                            <td class="p-3 font-medium">Deep Tissue Massage</td>
+                            <td class="p-3">Spa & Wellness</td>
+                            <td class="p-3 text-emerald-400">$110.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-slateCard p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-4 text-goldAccent">New Service Entry</h3>
+                <form class="space-y-4 text-sm">
+                    <div>
+                        <label class="block text-mutedText mb-1">Service Title</label>
+                        <input type="text" class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent">
+                    </div>
+                    <div>
+                        <label class="block text-mutedText mb-1">Standard Charge ($)</label>
+                        <input type="number" class="w-full p-2 bg-[#162232] border border-slate-700 rounded text-white focus:outline-none focus:border-goldAccent">
+                    </div>
+                    <button type="submit" class="w-full bg-slate-800 hover:bg-slate-700 text-goldAccent font-medium py-2 rounded transition border border-goldAccent/30">Publish Service</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
